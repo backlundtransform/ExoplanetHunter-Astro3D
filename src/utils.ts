@@ -29,7 +29,6 @@ export function getOrbitalPosition(
 export const getPositionFromAngle = getOrbitalPosition
 
 export function getAngleFromPosition(
-  planetPos: THREE.Vector3,
   semiMajorAxis: number,
   mousePoint: THREE.Vector3
 ): number {

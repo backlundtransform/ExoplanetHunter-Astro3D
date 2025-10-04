@@ -1,6 +1,6 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Bounds, OrbitControls, Stars } from '@react-three/drei'
+import {  OrbitControls, Stars } from '@react-three/drei'
 import { Planet } from './Planet'
 import './App.css'
 import { Star } from './Star'

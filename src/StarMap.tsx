@@ -1,9 +1,9 @@
-import React from "react"
+
 import { Canvas } from "@react-three/fiber"
 import { Html, OrbitControls, Stars as DreiStars } from "@react-three/drei"
 import type { StarApi } from "./types"
 import type { HabitablePlanetApi } from "./api"
-import * as THREE from "three"
+
 
 interface StarMapProps {
   stars: StarApi[]

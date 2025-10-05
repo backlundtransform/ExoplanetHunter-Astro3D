@@ -21,6 +21,8 @@ export async function fetchData(url: string) {
     const res = await Http.request({
       method: 'GET',
       url: url.startsWith('http') ? url : `https://exoplanethunter.com${url}`,
+      params: {},       
+      headers: {},
     });
 
     console.log('Native response:', res);

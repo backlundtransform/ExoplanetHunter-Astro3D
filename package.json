@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev":  "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor-community/http": "^1.4.1",
     "@capacitor/android": "^7.4.3",
     "@capacitor/cli": "^7.4.3",
     "@capacitor/core": "^7.4.3",

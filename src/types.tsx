@@ -1,3 +1,80 @@
+export interface StarApi {
+  id: number;
+  name: string;
+  nameHD?: string | null;
+  nameHIP?: string | null;
+  constellation?: string | null;
+  type?: string | null;
+  mass?: number | null;
+  radius?: number | null;
+  teff?: number | null;
+  luminosity?: number | null;
+  feH?: number | null;
+  age?: number | null;
+  apparMag?: number | null;
+  distance?: number | null;
+  ra?: number | null;
+  dec?: number | null;
+  magfromPlanet?: number | null;
+  sizefromPlanet?: number | null;
+  habZoneMin?: number | null;
+  habZoneMax?: number | null;
+  habCat?: boolean | null;
+  planets?: number | null;
+  message?: string | null;
+}
+
+export interface StarData {
+  id: number;
+  name: string;
+  nameHD?: string | null;
+  nameHIP?: string | null;
+  constellation?: string | null;
+  type?: string | null;
+  mass: number;
+  radius?: number | null;
+  teff?: number | null;
+  luminosity?: number | null;
+  feH?: number | null;
+  age?: number | null;
+  apparMag?: number | null;
+  distance?: number | null;
+  ra?: number | null;
+  dec?: number | null;
+  magfromPlanet?: number | null;
+  sizefromPlanet?: number | null;
+  habZoneMin?: number | null;
+  habZoneMax?: number | null;
+  habCat?: boolean | null;
+  planets?: number | null;
+  message?: string | null;
+}
+
+export interface HabitablePlanetApi {
+  id: number;
+  name: string;
+  img?: string | null;
+  period?: number | null;
+  habType?: number | null;
+  meanDistance?: number | null;
+  distance?: number | null;
+  esi?: number | null;
+  radius: number;
+  eccentricity?: number | null;
+  coordinate?: {
+    longitude: number;
+    latitude: number;
+  };
+  star?: {
+    name: string;
+    type: string;
+    mass: number;
+    radius: number;
+    temp?: number;
+  };
+}
+
+
 export interface PlanetData {
     id: number
     name: string
@@ -11,7 +88,7 @@ export interface PlanetData {
     minMass: number | null
     mass: number | null
     maxMass: number | null
-    radius: number  
+    radius?: number | null;
     density: number | null
     gravity: number | null
     escVel: number | null
@@ -57,7 +134,7 @@ export interface PlanetData {
     constellation:string | null,
     type: string,
     mass: number,
-    radius: number,
+    radius?: number | null,
     teff:number,
     luminosity:number,
     feH: number  | null,
@@ -84,7 +161,7 @@ export interface StarApi {
   constellation?: string | null
   type?: string | null
   mass?: number | null
-  radius: number
+  radius?: number | null
   teff?: number | null
   luminosity?: number | null
   feH?: number | null

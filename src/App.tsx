@@ -3,7 +3,7 @@ import StarMap from "./StarMap"
 import { ExoplanetSystem } from "./ExoplanetSystem"
 import { fetchStars, fetchSystem, fetchHabitablePlanets } from "./api"
 import type { StarApi, SystemData } from "./types"
-import type { HabitablePlanetApi } from "./api"
+import type { HabitablePlanetApi } from "./types"
 import "./App.css"
 
 
@@ -11,7 +11,7 @@ import "./App.css"
 const App: React.FC = () => {
   const [stars, setStars] = useState<StarApi[]>([])
   const [habitablePlanets, setHabitablePlanets] = useState<HabitablePlanetApi[]>([])
-  const [selectedSystem, setSelectedSystem] = useState<SystemData | null>(null)
+  const [selectedSystem, setSelectedSystem] = useState<any | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [hoveredStarId, setHoveredStarId] = useState<number | null>(null)

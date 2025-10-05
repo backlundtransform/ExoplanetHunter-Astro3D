@@ -1,9 +1,4 @@
-Absolutely 👍 — here’s a **clean, professional English `README.md`** you can drop into your project root.
-It summarizes what your *ExoplanetHunter* project is, how to set up and **debug on an Android device with Capacitor**, and includes all key steps for local development and testing.
 
----
-
-````markdown
 # 🌌 ExoplanetHunter
 
 **ExoplanetHunter** is a hybrid scientific visualization app that allows users to explore nearby stars and their exoplanetary systems in an interactive 3D environment.  

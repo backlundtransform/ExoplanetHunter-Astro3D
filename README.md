@@ -50,7 +50,7 @@ You should see something like:
 
 ```
 Local:   http://localhost:5173/
-Network: http://192.168.1.44:5173/
+Network: http://111.111.1.11:5173/
 ```
 
 ---
@@ -69,7 +69,7 @@ const config: CapacitorConfig = {
   appName: 'ExoplanetHunter',
   webDir: 'dist',
   server: {
-    url: 'http://192.168.1.44:5173', // replace with your machine’s LAN IP
+    url: 'http://111.111.1.11:5173', // replace with your machine’s LAN IP
     cleartext: true
   }
 };

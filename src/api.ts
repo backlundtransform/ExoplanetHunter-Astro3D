@@ -117,10 +117,12 @@ export function mapPlanet(api: any) {
 }
 
 
-export function mapSystem(star: StarApi, planets: any[]) {
+export function mapSystem(star: StarApi, planets: any) {
+
+  console.log(planets)
   return {
     ...mapStar(star),
-    planets: planets.map(mapPlanet)
+    planets: planets.planets.map(mapPlanet)
   };
 }
 
@@ -137,9 +139,7 @@ export async function fetchSystem(starId: number) {
   
   const star: StarApi = await fetchData(`${API_URL}/Stars/${starId}`);
 
- 
-  const planets: any[] = await fetchData(`${API_URL}/ExoSolarSystems/GetPlanetsByStarId/${starId}`);
+  const planets: any[] = await fetchData(`${API_URL}/Stars/${starId}/planets`);
 
- 
   return mapSystem(star, planets);
 }

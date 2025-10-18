@@ -50,7 +50,7 @@ export const ExoplanetSystem: React.FC<ExoplanetSystemProps> = ({ system, onBack
         <pointLight position={[0, 0, 0]} intensity={2} />
         <Stars radius={300} depth={60} count={10000} factor={7} saturation={0} fade speed={1} />
 
-        <Star radius={scaleStarRadiusToUnits(system.radius, maxDistance)} spectralType={system.type} />
+        <Star radius={scaleStarRadiusToUnits(system.radius ?? 0, maxDistance)} spectralType={system.type} />
         <HabitableZone innerRadius={system.habZoneMin} outerRadius={system.habZoneMax} scaleDistanceFn={scaleDistanceFn} />
 
         {system.planets.map((planet) => (

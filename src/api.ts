@@ -6,15 +6,12 @@ import type { StarApi, StarData, HabitablePlanetApi } from './types';
 const API_URL = "/api";
 
 export async function fetchData(url: string) {
-  console.log('Platform:', Capacitor.getPlatform());
-  console.log('Fetching URL:', url);
 
   try {
     if (Capacitor.getPlatform() === 'web') {
       const res = await fetch(url);
-      console.log('Web response:', res);
+      
       const data = await res.json();
-      console.log('Web JSON data:', data);
       return data;
     }
 
@@ -25,7 +22,6 @@ export async function fetchData(url: string) {
       headers: {},
     });
 
-    console.log('Native response:', res);
     return typeof res.data === 'string' ? JSON.parse(res.data) : res.data;
   } catch (err) {
     console.error('Fetch error:', err);
@@ -119,7 +115,7 @@ export function mapPlanet(api: any) {
 
 export function mapSystem(star: StarApi, planets: any) {
 
-  console.log(planets)
+
   return {
     ...mapStar(star),
     planets: planets.planets.map(mapPlanet)

@@ -1,0 +1,11 @@
+{
+  "app": {
+    "title": "Exoplanetjägaren",
+    "search_placeholder": "Sök stjärnor...",
+    "show_habitable_only": "Visa endast beboeliga system",
+    "loading": "Laddar...",
+    "error": "Fel: {{message}}",
+    "showing_count": "Visar {{count}} av {{total}} stjärnor",
+    "habitable_tooltip": "Möjligt beboelig planet"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "app": {
+    "title": "Exoplanet Hunter",
+    "search_placeholder": "Search stars...",
+    "show_habitable_only": "Show only habitable systems",
+    "loading": "Loading...",
+    "error": "Error: {{message}}",
+    "showing_count": "Showing {{count}} of {{total}} stars",
+    "habitable_tooltip": "Potentially habitable planet"
+  }
+}

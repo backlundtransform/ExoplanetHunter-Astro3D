@@ -4,8 +4,11 @@ import { ExoplanetSystem } from "./ExoplanetSystem"
 import { fetchStars, fetchSystem, fetchHabitablePlanets } from "./api"
 import type { StarApi, HabitablePlanetApi } from "./types"
 import "./App.css"
+import { useTranslation } from "react-i18next"
+import './i18n'
 
 const App: React.FC = () => {
+  const { t } = useTranslation()
   const [stars, setStars] = useState<StarApi[]>([])
   const [habitablePlanets, setHabitablePlanets] = useState<HabitablePlanetApi[]>([])
   const [selectedSystem, setSelectedSystem] = useState<any | null>(null)
@@ -13,7 +16,6 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
   const [hoveredStarId, setHoveredStarId] = useState<number | null>(null)
 
-  // Nya state för sökning och filtrering
   const [searchQuery, setSearchQuery] = useState("")
   const [showHabitableOnly, setShowHabitableOnly] = useState(false)
 
@@ -66,12 +68,12 @@ const App: React.FC = () => {
           boxShadow: "0 0 10px rgba(0,0,0,0.4)",
         }}
       >
-        <h2 style={{ marginTop: 0, color: "#58a6ff" }}>Exoplanet Hunter</h2>
+        <h2 style={{ marginTop: 0, color: "#58a6ff" }}>{t("app.title")}</h2>
 
         {/* 🔍 Sökfält */}
         <input
           type="text"
-          placeholder="Search stars..."
+          placeholder={t("app.search_placeholder")}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{
@@ -107,16 +109,16 @@ const App: React.FC = () => {
               accentColor: "#58a6ff",
             }}
           />
-          Show only habitable systems 🌍
+          {t("app.show_habitable_only")} 🌍
         </label>
 
         {/* Status */}
-        {loading && <p style={{ color: "#8b949e" }}>Loading...</p>}
-        {error && <p style={{ color: "#f85149" }}>Error: {error}</p>}
+        {loading && <p style={{ color: "#8b949e" }}>{t("app.loading")}</p>}
+        {error && <p style={{ color: "#f85149" }}>{t("app.error", { message: error })}</p>}
 
         {/* Antal resultat */}
         <p style={{ fontSize: "13px", color: "#8b949e", marginBottom: "8px" }}>
-          Showing {filteredStars.length} of {stars.length} stars
+          {t("app.showing_count", { count: filteredStars.length, total: stars.length })}
         </p>
 
         {/* ⭐ Lista */}
@@ -162,7 +164,7 @@ const App: React.FC = () => {
                         display: "inline-block",
                         boxShadow: "0 0 6px #2ea043aa",
                       }}
-                      title="Potentially habitable"
+                      title={t("app.habitable_tooltip")}
                     />
                   )}
                 </button>

@@ -1,9 +1,10 @@
-
+import React from "react"
 import { Canvas } from "@react-three/fiber"
 import { Html, OrbitControls, Stars as DreiStars } from "@react-three/drei"
 import type { StarApi } from "./types"
 import type { HabitablePlanetApi } from "./api"
-
+import { useTranslation } from "react-i18next"
+import './i18n'
 
 interface StarMapProps {
   stars: StarApi[]
@@ -20,6 +21,8 @@ export default function StarMap({
   hoveredStarId,
   onHoverStar,
 }: StarMapProps) {
+  const { t } = useTranslation()
+
   const raDecToXYZ = (ra: number, dec: number, radius: number) => {
     const raRad = (ra / 24) * 2 * Math.PI
     const decRad = (dec / 180) * Math.PI
@@ -42,31 +45,31 @@ export default function StarMap({
 
         return (
           <group key={star.id} position={[x, y, z]}>
-          {/* Grön ring runt beboliga stjärnor */}
-{isHabitable && (
-  <mesh renderOrder={0}>
-    <sphereGeometry args={[0.65, 16, 16]} /> {/* något större än stjärnan */}
-    <meshBasicMaterial
-      color={isHovered ? "yellow" : "green"}
-      transparent
-      opacity={0.5} // gör den lite genomskinlig så stjärnan syns
-    />
-  </mesh>
-)}
+            {/* Grön ring runt beboliga stjärnor */}
+            {isHabitable && (
+              <mesh renderOrder={0}>
+                <sphereGeometry args={[0.65, 16, 16]} />
+                <meshBasicMaterial
+                  color={isHovered ? "yellow" : "green"}
+                  transparent
+                  opacity={0.5}
+                />
+              </mesh>
+            )}
 
-/* Själva stjärnan */
-<mesh
-  renderOrder={isHovered ? 2 : 1}
-  onPointerOver={() => onHoverStar(star.id)}
-  onPointerOut={() => onHoverStar(null)}
-  onClick={() => onSelectStar(star.id)}
->
-  <sphereGeometry args={[0.5, 16, 16]} />
-  <meshBasicMaterial
-    color={isHovered ? "yellow" : "white"}
-    depthTest={false} // hovrad stjärna alltid över
-  />
-</mesh>
+            {/* Själva stjärnan */}
+            <mesh
+              renderOrder={isHovered ? 2 : 1}
+              onPointerOver={() => onHoverStar(star.id)}
+              onPointerOut={() => onHoverStar(null)}
+              onClick={() => onSelectStar(star.id)}
+            >
+              <sphereGeometry args={[0.5, 16, 16]} />
+              <meshBasicMaterial
+                color={isHovered ? "yellow" : "white"}
+                depthTest={false}
+              />
+            </mesh>
 
             {/* Tooltip */}
             {isHovered && (
@@ -78,8 +81,8 @@ export default function StarMap({
                     padding: "6px 10px",
                     borderRadius: "6px",
                     fontSize: "14px",
-                    width: "200px",  // lägg till px
-                    minHeight: "80px", // säkerställ höjd
+                    width: "200px",
+                    minHeight: "80px",
                     border: isHabitable ? "1px solid lime" : "none",
                   }}
                 >
@@ -87,7 +90,9 @@ export default function StarMap({
                   RA: {(star.ra ?? 0).toFixed(2)}h <br />
                   Dec: {(star.dec ?? 0).toFixed(2)}° <br />
                   {isHabitable && (
-                    <div style={{ marginTop: "4px", color: "green" }}>🌍 Möjligt beboelig</div>
+                    <div style={{ marginTop: "4px", color: "green" }}>
+                      🌍 {t("app.habitable_tooltip")}
+                    </div>
                   )}
                 </div>
               </Html>

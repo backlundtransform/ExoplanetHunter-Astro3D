@@ -1,11 +1,17 @@
 {
   "app": {
-    "title": "Exoplanetjägaren",
-    "search_placeholder": "Sök stjärnor...",
-    "show_habitable_only": "Visa endast beboeliga system",
-    "loading": "Laddar...",
-    "error": "Fel: {{message}}",
-    "showing_count": "Visar {{count}} av {{total}} stjärnor",
-    "habitable_tooltip": "Möjligt beboelig planet"
+    "title": "Exoplanet Hunter",
+    "search_placeholder": "Search stars...",
+    "show_habitable_only": "Show habitable systems only",
+    "loading": "Loading...",
+    "error": "Error: {{message}}",
+    "showing_count": "Showing {{count}} of {{total}} stars",
+    "habitable_tooltip": "Potentially habitable planet",
+    "planet_mass": "Mass",
+    "planet_radius": "Radius",
+    "planet_distance": "Distance",
+    "planet_temp": "Temperature",
+    "planet_period": "Orbital Period",
+    "planet_days": "days"
   }
 }

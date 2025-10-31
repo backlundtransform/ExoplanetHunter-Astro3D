@@ -7,5 +7,24 @@
     "error": "Error: {{message}}",
     "showing_count": "Showing {{count}} of {{total}} stars",
     "habitable_tooltip": "Potentially habitable planet"
+  },
+  "planet": {
+    "mass": "Mass",
+    "radius": "Radius",
+    "distance": "Distance",
+    "temperature": "Temperature",
+    "units": {
+      "earths": "Earths",
+      "au": "AU",
+      "kelvin": "K"
+    }
+  },
+  "system": {
+    "star": "Star",
+    "planets": "Planets"
+  },
+  "tooltip": {
+    "loading_planet": "Loading planet data...",
+    "no_data": "No data available"
   }
 }

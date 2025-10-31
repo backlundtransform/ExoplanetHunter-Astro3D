@@ -2,29 +2,16 @@
   "app": {
     "title": "Exoplanet Hunter",
     "search_placeholder": "Search stars...",
-    "show_habitable_only": "Show only habitable systems",
+    "show_habitable_only": "Show habitable systems only",
     "loading": "Loading...",
     "error": "Error: {{message}}",
     "showing_count": "Showing {{count}} of {{total}} stars",
-    "habitable_tooltip": "Potentially habitable planet"
-  },
-  "planet": {
-    "mass": "Mass",
-    "radius": "Radius",
-    "distance": "Distance",
-    "temperature": "Temperature",
-    "units": {
-      "earths": "Earths",
-      "au": "AU",
-      "kelvin": "K"
-    }
-  },
-  "system": {
-    "star": "Star",
-    "planets": "Planets"
-  },
-  "tooltip": {
-    "loading_planet": "Loading planet data...",
-    "no_data": "No data available"
+    "habitable_tooltip": "Potentially habitable planet",
+    "planet_mass": "Mass",
+    "planet_radius": "Radius",
+    "planet_distance": "Distance",
+    "planet_temp": "Temperature",
+    "planet_period": "Orbital Period",
+    "planet_days": "days"
   }
 }

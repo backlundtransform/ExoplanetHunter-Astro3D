@@ -19,6 +19,9 @@ const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("")
   const [showHabitableOnly, setShowHabitableOnly] = useState(false)
 
+  // Mobil drawer state
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
   useEffect(() => {
     fetchStars()
       .then((data: any[]) => setStars(data))
@@ -35,6 +38,7 @@ const App: React.FC = () => {
     try {
       const system = await fetchSystem(starId)
       setSelectedSystem(system)
+      setSidebarOpen(false) // stäng drawer på mobil när man väljer
     } catch (err: any) {
       setError(err.message)
     } finally {
@@ -56,17 +60,19 @@ const App: React.FC = () => {
     .sort((a, b) => a.name.localeCompare(b.name))
 
   return (
-    <div style={{ display: "flex", height: "100vh", backgroundColor: "#0d1117", color: "#e6edf3" }}>
-      {/* 🌌 SIDOLISTA */}
+    <div className="app-container" onClick={() => sidebarOpen && setSidebarOpen(false)}>
+      {/* Toggle-knapp på mobil */}
+      <button
+        className="sidebar-toggle"
+        onClick={(e) => { e.stopPropagation(); setSidebarOpen(!sidebarOpen) }}
+      >
+        ☰ 
+      </button>
+
+      {/* 🌌 SIDOPANEL */}
       <div
-        style={{
-          width: "280px",
-          overflowY: "auto",
-          padding: "16px",
-          borderRight: "1px solid #30363d",
-          backgroundColor: "#161b22",
-          boxShadow: "0 0 10px rgba(0,0,0,0.4)",
-        }}
+        className={`sidebar ${sidebarOpen ? "open" : ""}`}
+        onClick={(e) => e.stopPropagation()}
       >
         <h2 style={{ marginTop: 0, color: "#58a6ff" }}>{t("app.title")}</h2>
 
@@ -174,14 +180,20 @@ const App: React.FC = () => {
         </ul>
       </div>
 
+      {/* Overlay för mobil */}
+      {sidebarOpen && (
+        <div
+          className="overlay"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* 🪐 3D-stjärnkarta */}
-      <div style={{ flex: 1 }}>
+      <div className="starmap-container">
         <StarMap
           stars={stars}
           habitablePlanets={habitablePlanets}
           onSelectStar={handleSelectStar}
-          hoveredStarId={hoveredStarId}
-          onHoverStar={setHoveredStarId}
         />
       </div>
     </div>

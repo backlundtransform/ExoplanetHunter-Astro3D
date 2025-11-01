@@ -1,29 +1,34 @@
 import React, { useMemo } from 'react'
-
-import { Line } from '@react-three/drei'
+import { Line, Tube } from '@react-three/drei'
 import * as THREE from 'three'
 import { LineMaterial } from 'three-stdlib'
+import type { PlanetData } from './types'
 
 interface OrbitPathProps {
-  semiMajorAxis: number         
-  eccentricity: number          
-  inclination: number           
-  color?: string              
-  segments?: number           
+  semiMajorAxis: number
+  eccentricity: number
+  inclination: number
+  color?: string
+  segments?: number
+  planet?: PlanetData | null
+  onHover?: (planet: PlanetData | null) => void
 }
+
 const material = new LineMaterial({
-  
   linewidth: 0.5,
   transparent: true,
   opacity: 0.1,
-  depthWrite: false
+  depthWrite: false,
 })
-export const OrbitPath: React.FC<OrbitPathProps> = ({
+
+export const OrbitPathInteractive: React.FC<OrbitPathProps> = ({
   semiMajorAxis,
   eccentricity,
   inclination,
   color = 'white',
-  segments = 128
+  segments = 128,
+  planet = null,
+  onHover,
 }) => {
   const points = useMemo(() => {
     const a = semiMajorAxis
@@ -46,13 +51,21 @@ export const OrbitPath: React.FC<OrbitPathProps> = ({
     return pts
   }, [semiMajorAxis, eccentricity, inclination, segments])
 
+  const curve = useMemo(() => new THREE.CatmullRomCurve3(points), [points])
+
   return (
-    <Line
-      points={points}
-      color={color}
-      lineWidth={0.5}
-      dashed={false}
-      material={material}
-    />
+    <>
+      {/* Visuell orbit-linje */}
+      <Line points={points} color={color} lineWidth={0.5} material={material} />
+
+      {/* Osynlig tube för touch på mobil */}
+      <Tube
+        args={[curve, segments, semiMajorAxis * 0.02, 8, false]} // liten men tryckvänlig
+        visible={false}
+        onPointerOver={(e) => onHover?.(planet)}
+        onPointerOut={(e) => onHover?.(null)}
+        onClick={(e) => onHover?.(planet)}
+      />
+    </>
   )
 }

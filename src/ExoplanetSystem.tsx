@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
 import { Planet } from './Planet'
 import { Star } from './Star'
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import { HabitableZone } from './HabitableZone'
-import { OrbitPath } from './OrbitRing'
+import { OrbitPathInteractive } from './OrbitRing'
 import type { SystemData, PlanetData } from './types'
 import { makeScaleDistanceFn, makeScaleRadiusFn, scaleStarRadiusToUnits } from './utils'
 import { useTranslation } from 'react-i18next'
-import './i18n'
-import './App.css'
 
 interface ExoplanetSystemProps {
   system: SystemData
@@ -20,6 +18,14 @@ interface ExoplanetSystemProps {
 export const ExoplanetSystem: React.FC<ExoplanetSystemProps> = ({ system, onBack }) => {
   const [hoveredPlanet, setHoveredPlanet] = useState<PlanetData | null>(null)
   const { t } = useTranslation()
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const scaleDistanceFn = makeScaleDistanceFn(system, 200)
   const scaleRadiusFn = makeScaleRadiusFn(system, 5, 0.8)
@@ -27,8 +33,13 @@ export const ExoplanetSystem: React.FC<ExoplanetSystemProps> = ({ system, onBack
   const maxDistance = scaleDistanceFn(maxDistanceAU)
   const cameraZ = maxDistance * 1.5
 
+  // Stäng tooltip på mobil vid klick utanför
+  const handleBackgroundClick = () => {
+    if (isMobile) setHoveredPlanet(null)
+  }
+
   return (
-    <div className="canvas-container" style={{ width: '100%', height: '100%', position: 'relative' }}>
+    <div className="canvas-container" style={{ width: '100%', height: '100%', position: 'relative' }} onClick={handleBackgroundClick}>
       <button
         onClick={onBack}
         style={{
@@ -51,8 +62,10 @@ export const ExoplanetSystem: React.FC<ExoplanetSystemProps> = ({ system, onBack
         <div
           style={{
             position: 'absolute',
-            top: 10,
-            right: 10,
+            top: isMobile ? '50%' : 10,
+            left: isMobile ? '50%' : undefined,
+            right: isMobile ? undefined : 10,
+            transform: isMobile ? 'translate(-50%, -50%)' : undefined,
             zIndex: 10,
             backgroundColor: 'rgba(0,0,0,0.75)',
             color: 'white',
@@ -76,7 +89,6 @@ export const ExoplanetSystem: React.FC<ExoplanetSystemProps> = ({ system, onBack
         </div>
       )}
 
-      {/* 🌟 3D-systemet */}
       <Canvas camera={{ position: [0, maxDistance * 0.3, cameraZ], fov: 50 }}>
         <ambientLight intensity={0.3} />
         <pointLight position={[0, 0, 0]} intensity={2} />
@@ -87,11 +99,12 @@ export const ExoplanetSystem: React.FC<ExoplanetSystemProps> = ({ system, onBack
 
         {system.planets.map((planet) => (
           <React.Fragment key={planet.id}>
-            <OrbitPath
+            <OrbitPathInteractive
               semiMajorAxis={scaleDistanceFn(planet.meanDistance ?? 0)}
               eccentricity={planet.eccentricity ?? 0}
               inclination={planet.inclination ?? 0}
-              color="white"
+              planet={planet}
+              onHover={setHoveredPlanet}
             />
             <Planet
               planet={planet}

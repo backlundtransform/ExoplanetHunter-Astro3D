@@ -63,7 +63,7 @@ export default function StarMap({
       )}
 
       {/* 🎇 Själva 3D-kartan */}
-      <Canvas camera={{ position: [0, 0, 100], fov: 60 }}>
+      <Canvas camera={{ position: [0, 0, 100], fov: 60 }} style={{ width: '100%', height: '100%', backgroundColor: '#0d1117' }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[0, 0, 0]} intensity={1} />
         <DreiStars radius={100} depth={50} count={1000} factor={4} saturation={0} fade />

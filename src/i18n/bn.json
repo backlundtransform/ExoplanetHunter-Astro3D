@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "এক্সোপ্ল্যানেট হান্টার",
+    "search_placeholder": "তারকা অনুসন্ধান করুন...",
+    "show_habitable_only": "শুধুমাত্র বাসযোগ্য সিস্টেম দেখান",
+    "loading": "লোড হচ্ছে...",
+    "error": "ত্রুটি: {{message}}",
+    "showing_count": "{{total}} তারকার মধ্যে {{count}} প্রদর্শিত হচ্ছে",
+    "habitable_tooltip": "সম্ভাব্য বাসযোগ্য গ্রহ",
+    "planet_mass": "ভর",
+    "planet_radius": "ব্যাসার্ধ",
+    "planet_distance": "দূরত্ব",
+    "planet_temp": "তাপমাত্রা",
+    "planet_period": "কক্ষীয় সময়কাল",
+    "planet_days": "দিন"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "Охотник за экзопланетами",
+    "search_placeholder": "Поиск звезд...",
+    "show_habitable_only": "Показывать только обитаемые системы",
+    "loading": "Загрузка...",
+    "error": "Ошибка: {{message}}",
+    "showing_count": "Показано {{count}} из {{total}} звезд",
+    "habitable_tooltip": "Потенциально обитаемая планета",
+    "planet_mass": "Масса",
+    "planet_radius": "Радиус",
+    "planet_distance": "Расстояние",
+    "planet_temp": "Температура",
+    "planet_period": "Орбитальный период",
+    "planet_days": "дни"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "Pemburu Eksoplanet",
+    "search_placeholder": "Cari bintang...",
+    "show_habitable_only": "Tampilkan hanya sistem yang dapat dihuni",
+    "loading": "Memuat...",
+    "error": "Kesalahan: {{message}}",
+    "showing_count": "Menampilkan {{count}} dari {{total}} bintang",
+    "habitable_tooltip": "Planet yang mungkin dapat dihuni",
+    "planet_mass": "Massa",
+    "planet_radius": "Jari-jari",
+    "planet_distance": "Jarak",
+    "planet_temp": "Suhu",
+    "planet_period": "Periode orbit",
+    "planet_days": "hari"
+  }
+}

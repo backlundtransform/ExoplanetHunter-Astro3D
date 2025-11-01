@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "एक्सोप्लॅनेट हंटर",
+    "search_placeholder": "तारे शोधा...",
+    "show_habitable_only": "फक्त राहण्यायोग्य प्रणाली दाखवा",
+    "loading": "लोड होत आहे...",
+    "error": "त्रुटी: {{message}}",
+    "showing_count": "{{total}} तार्‍यांपैकी {{count}} दर्शविले जात आहेत",
+    "habitable_tooltip": "संभाव्य राहण्यायोग्य ग्रह",
+    "planet_mass": "वजन",
+    "planet_radius": "त्रिज्या",
+    "planet_distance": "अंतर",
+    "planet_temp": "तापमान",
+    "planet_period": "कक्षीय कालावधी",
+    "planet_days": "दिवस"
+  }
+}

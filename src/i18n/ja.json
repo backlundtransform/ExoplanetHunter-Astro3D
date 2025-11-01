@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "エキソプラネットハンター",
+    "search_placeholder": "星を検索...",
+    "show_habitable_only": "居住可能なシステムのみ表示",
+    "loading": "読み込み中...",
+    "error": "エラー: {{message}}",
+    "showing_count": "{{total}}個の星のうち{{count}}個を表示中",
+    "habitable_tooltip": "居住可能な惑星の可能性",
+    "planet_mass": "質量",
+    "planet_radius": "半径",
+    "planet_distance": "距離",
+    "planet_temp": "温度",
+    "planet_period": "公転周期",
+    "planet_days": "日"
+  }
+}

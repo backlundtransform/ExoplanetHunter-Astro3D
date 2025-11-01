@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "صائد الكواكب الخارجية",
+    "search_placeholder": "ابحث عن النجوم...",
+    "show_habitable_only": "إظهار الأنظمة الصالحة للسكن فقط",
+    "loading": "جارٍ التحميل...",
+    "error": "خطأ: {{message}}",
+    "showing_count": "إظهار {{count}} من {{total}} نجمًا",
+    "habitable_tooltip": "كوكب قابل للسكن المحتمل",
+    "planet_mass": "الكتلة",
+    "planet_radius": "نصف القطر",
+    "planet_distance": "المسافة",
+    "planet_temp": "درجة الحرارة",
+    "planet_period": "الفترة المدارية",
+    "planet_days": "أيام"
+  }
+}

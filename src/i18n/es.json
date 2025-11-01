@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "Cazador de Exoplanetas",
+    "search_placeholder": "Buscar estrellas...",
+    "show_habitable_only": "Mostrar solo sistemas habitables",
+    "loading": "Cargando...",
+    "error": "Error: {{message}}",
+    "showing_count": "Mostrando {{count}} de {{total}} estrellas",
+    "habitable_tooltip": "Planeta potencialmente habitable",
+    "planet_mass": "Masa",
+    "planet_radius": "Radio",
+    "planet_distance": "Distancia",
+    "planet_temp": "Temperatura",
+    "planet_period": "Período orbital",
+    "planet_days": "días"
+  }
+}

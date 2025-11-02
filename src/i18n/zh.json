@@ -23,6 +23,7 @@
     "star_radius": "恒星半径",
     "unknown": "未知",
     "no": "否",
-    "yes": "是"
+    "yes": "是",
+    "star_distance": "星到的距离"
   }
 }

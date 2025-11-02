@@ -27,6 +27,8 @@ const scaleSolarRadiusToUnits = (radiusSolarRadii: number) =>
       <mesh
         onPointerOver={() => onHover(true)}
         onPointerOut={() => onHover(false)}
+        onPointerDown={() => onHover(true)}   
+        onPointerUp={() => onHover(false)}    
       >
 
       {/* Inre solkroppen med textur */}

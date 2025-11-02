@@ -23,6 +23,7 @@
     "star_radius": "Rayon de l'étoile",
     "unknown": "Inconnu",
     "no": "Non",
-    "yes": "Oui"
+    "yes": "Oui",
+    "star_distance": "Distance à l'étoile"
   }
 }

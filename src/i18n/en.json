@@ -17,6 +17,7 @@
     "planet_habitability": "Habitability",
     "planet_discovery_year": "Discovery Year",
     "star_type": "Star Type",
+    "star_distance": "Star Distance",
     "star_mass": "Star Mass",
     "star_temperature": "Star Temperature",
     "star_luminosity": "Star Luminosity",

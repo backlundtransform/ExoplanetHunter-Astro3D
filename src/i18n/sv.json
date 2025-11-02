@@ -24,6 +24,7 @@
     "star_radius": "Stjärnradie",
     "unknown": "Okänt",
     "no": "Nej",
-    "yes": "Ja"
+    "yes": "Ja",
+    "star_distance": "Avstånd till stjärnan"
   }
 }

@@ -23,6 +23,7 @@
     "star_radius": "恒星の半径",
     "unknown": "不明",
     "no": "いいえ",
-    "yes": "はい"
+    "yes": "はい",
+    "star_distance": "星までの距離"
   }
 }

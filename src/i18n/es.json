@@ -22,7 +22,9 @@
     "star_luminosity": "Luminosidad de la estrella",
     "star_radius": "Radio de la estrella",
     "no": "no",
-    "yes": "sí"
+    "yes": "sí",
+    "unknown": "desconocido",
+    "star_distance": "Distancia a la estrella"
 
   }
 }

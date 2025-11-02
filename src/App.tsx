@@ -154,9 +154,9 @@ const App: React.FC = () => {
                     color: "#e6edf3",
                     transition: "background-color 0.2s ease, transform 0.1s ease",
                   }}
-                >
+                >  
                   <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    {hasHabitablePlanet && <span>🌍</span>}
+                    {hasHabitablePlanet && <>🌍</>}
                     {star.name}
                   </span>
 

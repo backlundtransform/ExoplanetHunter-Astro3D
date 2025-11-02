@@ -1,9 +1,12 @@
 import { useLoader } from "@react-three/fiber"
 import { TextureLoader } from "three"
 
+
 interface StarProps {
+    
     radius: number
     spectralType:string
+    onHover: React.Dispatch<React.SetStateAction<boolean>>
   }
   
                  
@@ -15,13 +18,16 @@ const scaleSolarRadiusToUnits = (radiusSolarRadii: number) =>
   radiusSolarRadii * SOLAR_RADIUS_IN_EARTH_RADII * EARTH_RADIUS_UNITS
 
 
-  export const Star: React.FC<StarProps> = ({ radius, spectralType }) => {
+  export const Star: React.FC<StarProps> = ({ radius, spectralType, onHover }) => {
     const scaledRadius = scaleSolarRadiusToUnits(radius)
     const color = getStarColor(spectralType)
     const texture = useLoader(TextureLoader, '/textures/sun.png') 
   
     return (
-      <mesh>
+      <mesh
+        onPointerOver={() => onHover(true)}
+        onPointerOut={() => onHover(false)}
+      >
 
       {/* Inre solkroppen med textur */}
       <sphereGeometry args={[scaledRadius, 64, 64]} />

@@ -45,6 +45,27 @@ export function getAngleFromPosition(
   return angle
 }
 
+export function significantDigits(num: number): number {
+  if (num === 0) return 0;
+
+  const abs = Math.abs(num);
+  const log10 = Math.floor(Math.log10(abs));
+
+  let decimaler;
+  if (log10 >= 3) decimaler = 0;         
+  else if (log10 >= 2) decimaler = 1;    
+  else if (log10 >= 1) decimaler = 2;    
+  else if (log10 >= 0) decimaler = 3;    
+  else if (log10 >= -1) decimaler = 4;   
+  else if (log10 >= -2) decimaler = 5;   
+  else decimaler = 6;                    
+
+  const faktor = Math.pow(10, decimaler);
+  const avrundat = Math.round((num + Number.EPSILON) * faktor) / faktor;
+  
+  return Number(avrundat.toFixed(decimaler));
+}
+
 export function makeScaleDistanceFn(system: SystemData, targetMax = 200) {
   const maxDistanceAU = Math.max(...system.planets.map(p => p.meanDistance ?? 0))
 

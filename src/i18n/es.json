@@ -12,6 +12,17 @@
     "planet_distance": "Distancia",
     "planet_temp": "Temperatura",
     "planet_period": "Período orbital",
-    "planet_days": "días"
+    "planet_days": "días",
+    "planet_discovery_method": "Método de descubrimiento",
+    "planet_habitability": "Habitabilidad",
+    "planet_discovery_year": "Año de descubrimiento",
+    "star_type": "Tipo de estrella",
+    "star_mass": "Masa de la estrella",
+    "star_temperature": "Temperatura de la estrella",
+    "star_luminosity": "Luminosidad de la estrella",
+    "star_radius": "Radio de la estrella",
+    "no": "no",
+    "yes": "sí"
+
   }
 }

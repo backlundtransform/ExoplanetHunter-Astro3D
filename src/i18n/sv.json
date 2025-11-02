@@ -12,6 +12,18 @@
     "planet_distance": "Avstånd",
     "planet_temp": "Temperatur",
     "planet_period": "Omloppsperiod",
-    "planet_days": "dagar"
+    "planet_days": "dagar",
+    "planet_discovery_method": "Upptäcktsmetod",
+    "planet_habitability": "Beboelighet",
+    "planet_discovery_year": "Upptäcktsår",
+    "star_type": "Stjärntyp",
+    "star_mass": "Stjärnmassa",
+
+    "star_temperature": "Stjärntemperatur",
+    "star_luminosity": "Stjärnljusstyrka",  
+    "star_radius": "Stjärnradie",
+    "unknown": "Okänt",
+    "no": "Nej",
+    "yes": "Ja"
   }
 }

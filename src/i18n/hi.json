@@ -12,6 +12,17 @@
     "planet_distance": "दूरी",
     "planet_temp": "तापमान",
     "planet_period": "कक्षीय अवधि",
-    "planet_days": "दिन"
+    "planet_days": "दिन",
+    "planet_discovery_method": "खोज विधि",
+    "planet_habitability": "रहने योग्य",
+    "planet_discovery_year": "खोज वर्ष",
+    "star_type": "तारे का प्रकार",
+    "star_mass": "तारे का द्रव्यमान",
+    "star_temperature": "तारे का तापमान",
+    "star_luminosity": "तारे की चमक",
+    "star_radius": "तारे की त्रिज्या",
+    "unknown": "अज्ञात",
+    "no": "नहीं",
+    "yes": "हाँ"
   }
 }

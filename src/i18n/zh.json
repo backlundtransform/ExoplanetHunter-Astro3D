@@ -12,6 +12,17 @@
     "planet_distance": "距离",
     "planet_temp": "温度",
     "planet_period": "轨道周期",
-    "planet_days": "天"
+    "planet_days": "天",
+    "planet_discovery_method": "发现方法",
+    "planet_habitability": "宜居性",
+    "planet_discovery_year": "发现年份",
+    "star_type": "恒星类型",
+    "star_mass": "恒星质量",
+    "star_temperature": "恒星温度",
+    "star_luminosity": "恒星光度",
+    "star_radius": "恒星半径",
+    "unknown": "未知",
+    "no": "否",
+    "yes": "是"
   }
 }

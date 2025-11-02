@@ -1,4 +1,4 @@
-package com.exoplanethunter;
+package com.varoid.exoplanethunter;
 
 import com.getcapacitor.BridgeActivity;
 

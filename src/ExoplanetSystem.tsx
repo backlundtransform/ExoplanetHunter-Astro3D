@@ -33,7 +33,8 @@ export const ExoplanetSystem: React.FC<ExoplanetSystemProps> = ({ system, onBack
   const maxDistance = scaleDistanceFn(maxDistanceAU)
   const cameraZ = maxDistance * 1.5
 
-  // Stäng tooltip på mobil vid klick utanför
+  
+  
   const handleBackgroundClick = () => {
     if (isMobile) setHoveredPlanet(null)
   }

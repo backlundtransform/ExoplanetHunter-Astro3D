@@ -62,9 +62,9 @@ export const OrbitPathInteractive: React.FC<OrbitPathProps> = ({
       <Tube
         args={[curve, segments, semiMajorAxis * 0.02, 8, false]} // liten men tryckvänlig
         visible={false}
-        onPointerOver={(e) => onHover?.(planet)}
-        onPointerOut={(e) => onHover?.(null)}
-        onClick={(e) => onHover?.(planet)}
+        onPointerOver={() => onHover?.(planet)}
+        onPointerOut={() => onHover?.(null)}
+        onClick={() => onHover?.(planet)}
       />
     </>
   )

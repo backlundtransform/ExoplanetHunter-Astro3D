@@ -7,7 +7,7 @@ android {
         applicationId "com.varoid.exoplanethunter"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 99660
+        versionCode 99661
         versionName "3.01"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {

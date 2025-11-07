@@ -5,6 +5,7 @@ import type { StarApi } from "./types"
 import type { HabitablePlanetApi } from  './types'
 import { useTranslation } from "react-i18next"
 import "./i18n"
+import { significantDigits } from "./utils"
 
 export default function StarMap({
   stars,
@@ -51,9 +52,9 @@ export default function StarMap({
         >
           <b>{hoveredStar.name}</b>
           <br />
-          RA: {(hoveredStar.ra ?? 0).toFixed(2)}h
+          RA: {significantDigits(hoveredStar.ra ?? 0)}h
           <br />
-          Dec: {(hoveredStar.dec ?? 0).toFixed(2)}°
+          Dec: {significantDigits(hoveredStar.dec ?? 0)}°
           {habitablePlanets.some((p) => p.star?.name === hoveredStar.name) && (
             <div style={{ marginTop: "4px", color: "lime" }}>
               🌍 {t("app.habitable_tooltip")}

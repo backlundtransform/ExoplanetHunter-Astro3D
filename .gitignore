@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 gradle.properties
 planetviktigkey.jks
+/android/gradle.properties

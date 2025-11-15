@@ -68,6 +68,7 @@ const App: React.FC = () => {
       >
         ☰ 
       </button>
+ 
 
       {/* 🌌 SIDOPANEL */}
       <div
@@ -126,6 +127,7 @@ const App: React.FC = () => {
         <p style={{ fontSize: "13px", color: "#8b949e", marginBottom: "8px" }}>
           {t("app.showing_count", { count: filteredStars.length, total: stars.length })}
         </p>
+
 
         {/* ⭐ Lista */}
         <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
@@ -187,6 +189,7 @@ const App: React.FC = () => {
           onClick={() => setSidebarOpen(false)}
         />
       )}
+
 
       {/* 🪐 3D-stjärnkarta */}
       <div className="starmap-container">

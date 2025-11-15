@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@awesome-cordova-plugins/device-orientation": "^8.1.0",
     "@capacitor-community/http": "^1.4.1",
     "@capacitor/android": "^7.4.3",
     "@capacitor/cli": "^7.4.3",
     "@capacitor/core": "^7.4.3",
+    "@capacitor/geolocation": "^7.1.5",
+    "@capacitor/motion": "^7.0.1",
     "@react-three/drei": "^10.4.4",
     "@react-three/fiber": "^9.2.0",
     "@react-three/postprocessing": "^3.0.4",
+    "cordova-plugin-device-orientation": "^3.0.0",
     "i18next": "^25.6.0",
     "i18next-browser-languagedetector": "^8.2.0",
     "react": "^19.1.0",

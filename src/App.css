@@ -276,4 +276,24 @@ h1 {
     height: 100vh;
       z-index: 0; /* under overlay och sidebar */
   }
+
+
+}
+
+.gps-button {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  z-index: 1000;
+  background-color: #21262d;
+  color: #58a6ff;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.gps-button:hover {
+  background-color: #1f6feb22;
 }

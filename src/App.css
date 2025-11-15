@@ -282,8 +282,8 @@ h1 {
 
 .gps-button {
   position: absolute;
-  top: 60px;
-  left: 10px;
+  top: 10px;
+  right: 10px;
   z-index: 1000;
   background-color: #21262d;
   color: #58a6ff;

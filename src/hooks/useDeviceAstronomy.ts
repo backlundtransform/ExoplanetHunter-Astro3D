@@ -78,7 +78,9 @@ useEffect(() => {
         setAstro({ altitude, azimuth, ra, dec });
     }, [orientation, coords]);
 
-    return { latitude: coords.lat, longitude: coords.lon, ...astro };
+        return { latitude: coords.lat, longitude: coords.lon, ...astro, alpha: orientation.alpha, beta: orientation.beta, gamma: orientation.gamma };
 };
 
 export default useDeviceAstronomy;
+
+

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars as DreiStars } from "@react-three/drei";
 import type { StarApi } from "./types";
 import type { HabitablePlanetApi } from './types';

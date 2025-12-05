@@ -70,11 +70,11 @@ const deviceAstronomy = isAndroid ? useDeviceAstronomy() : { ra: 0, dec: 0, alph
           fontSize: "14px",
           lineHeight: "1.4",
         }}>
-          RA: {deviceAstronomy.ra?.toFixed(2)}h<br />
-          Dec: {deviceAstronomy.dec?.toFixed(2)}°<br />
-          Azimuth: {deviceAstronomy.alpha?.toFixed(1)}<br />
-          Pitch: {deviceAstronomy.beta?.toFixed(1)}<br />
-          Roll: {deviceAstronomy.gamma?.toFixed(1)}
+          RA: {significantDigits((deviceAstronomy.ra ?? 0) / 15)}h<br />
+          Dec: {significantDigits(deviceAstronomy.dec ?? 0)}°<br />
+          Azimuth: {significantDigits(deviceAstronomy.alpha ?? 0)}<br />
+          Pitch: {significantDigits(deviceAstronomy.beta ?? 0)}<br />
+          Roll: {significantDigits(deviceAstronomy.gamma ?? 0)}
         </div>
       )}
 
@@ -94,7 +94,7 @@ const deviceAstronomy = isAndroid ? useDeviceAstronomy() : { ra: 0, dec: 0, alph
           lineHeight: "1.4",
         }}>
           <b>{hoveredStar.name}</b><br />
-          RA: {significantDigits(hoveredStar.ra ?? 0)}h<br />
+          RA: {significantDigits((hoveredStar.ra ?? 0) / 15)}h<br />
           Dec: {significantDigits(hoveredStar.dec ?? 0)}°<br />
           {habitablePlanets.some((p) => p.star?.name === hoveredStar.name) && (
             <div style={{ marginTop: "4px", color: "lime" }}>

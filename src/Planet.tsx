@@ -11,6 +11,7 @@ interface PlanetProps {
   scaleRadiusFn: (radiusEarthRadii: number) => number
   system: SystemData
   onHover: (planet: PlanetData | null) => void
+  orbitSpeedMultiplier?: number // global speed multiplier
 }
 
 export const Planet: React.FC<PlanetProps> = ({
@@ -19,6 +20,7 @@ export const Planet: React.FC<PlanetProps> = ({
   scaleRadiusFn,
   system,
   onHover,
+  orbitSpeedMultiplier = 0.3, // Långsammare rotation som default
 }) => {
   const ref = useRef<Mesh>(null)
 
@@ -29,20 +31,25 @@ export const Planet: React.FC<PlanetProps> = ({
   const e = planet.eccentricity ?? 0
   const i = planet.inclination ?? 0
 
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      const periodDays = planet.period ?? 1
-      const shortestPeriod = Math.min(...system.planets.map(p => p.period ?? 1))
-      const fastestOrbitSeconds = 20
-      const angle =
-        (clock.getElapsedTime() / fastestOrbitSeconds) *
-        (shortestPeriod / periodDays) *
-        2 *
-        Math.PI
+  const shortestPeriod = Math.min(...system.planets.map(p => p.period ?? 1))
+  const periodDays = planet.period ?? 1
+  const fastestOrbitSeconds = 20 // bas för snabbaste planeten
 
-      const pos = getPositionFromAngle(a, e, i, angle)
-      ref.current.position.set(pos.x, pos.y, pos.z)
-    }
+  useFrame(({ clock }) => {
+    if (!ref.current) return
+
+    const elapsed = clock.getElapsedTime()
+
+    // Beräkna kontinuerlig vinkel
+    const angle =
+      (elapsed / fastestOrbitSeconds) *
+      (shortestPeriod / periodDays) *
+      2 *
+      Math.PI *
+      orbitSpeedMultiplier
+
+    const pos = getPositionFromAngle(a, e, i, angle)
+    ref.current.position.set(pos.x, pos.y, pos.z)
   })
 
   return (

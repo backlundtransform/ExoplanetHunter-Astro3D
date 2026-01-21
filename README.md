@@ -180,6 +180,9 @@ Physicist turned IT consultant with a passion for astronomy, simulation, and AI.
 Based in Växjö, Sweden.
 
 ---
+## 🌌 Support the project
+ExoplanetHunter is an open-source project focused on scientifically grounded exoplanet visualization and simulation.
+If you find it useful for learning, teaching, or exploration, consider sponsoring to support continued development.
 
 ## 🧭 License
 
